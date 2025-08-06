@@ -8,8 +8,8 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize:20,
     height: 60,
-    padding: 16,
-    borderRadius: 8,
+    padding: 12,
+    borderRadius: 12,
     textAlign: 'center'
   }
 });
