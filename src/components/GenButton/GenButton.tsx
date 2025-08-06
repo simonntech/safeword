@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Text, Pressable } from 'react-native';
+import { Text, Pressable, ToastAndroid } from 'react-native';
 
 import { styles } from './GenButtonStyles';
 import { AppTextInput } from '../AppTextInput/AppTextInput';
 import generatePass from '../../services/passwordService';
+
+import * as Clipboard from 'expo-clipboard';
 
 export function GenButton() {
     const [pass, setPass] = useState('')
@@ -13,6 +15,11 @@ export function GenButton() {
         setPass(generateToken)
     }
 
+    function handleCopyButton() {
+        Clipboard.setStringAsync(pass);
+        ToastAndroid.show('Senha copiada para a sua área de transferência', ToastAndroid.SHORT)
+    }
+
     return (
         <>
             <AppTextInput pass={pass}/>
@@ -20,14 +27,14 @@ export function GenButton() {
                 onPress={handleGenerateButton}
                 style={styles.button}
             >
-                <Text style={styles.text}>Gerar Password</Text>
+                <Text style={styles.text}>Gerar Senha</Text>
             </Pressable>
 
             <Pressable
-                onPress={() => { console.log("Pressionado") }}
+                onPress={handleCopyButton}
                 style={styles.button}
             >
-                <Text style={styles.text}>Copiar Password</Text>
+                <Text style={styles.text}>Copiar Senha</Text>
             </Pressable>
         </>
     );
