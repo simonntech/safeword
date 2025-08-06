@@ -2,12 +2,14 @@ import React from "react";
 import { Text, View } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import styles from './HomeStyles'
-import { Menu } from "../../components/Menu/Menu";
+import { Logo } from "../../components/Logo/Logo";
 
 export default function Home() {
     return (
         <View style={styles.container}>
-            <Menu />
+            <View>
+                <Logo />
+            </View>
             <Text>Home page</Text>
             <StatusBar style='auto' />
         </View>
