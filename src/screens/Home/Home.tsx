@@ -1,19 +1,19 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import styles from './HomeStyles'
 import { Logo } from "../../components/Logo/Logo";
-import { AppTextInput } from "../../components/AppTextInput/AppTextInput";
+import { GenButton } from "../../components/GenButton/GenButton";
 
 export default function Home() {
     return (
         <View style={styles.appContainer}>
-            <View style = {styles.logoContainer}>
+            <View style={styles.logoContainer}>
                 <Logo />
             </View>
 
-            <View style = {styles.inputContainer}>
-                <AppTextInput />
+            <View style={styles.inputContainer}>
+                <GenButton/>
             </View>
 
             <StatusBar style='auto' />

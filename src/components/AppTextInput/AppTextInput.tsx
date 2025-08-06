@@ -7,7 +7,7 @@ export function AppTextInput() {
   return (
     <TextInput
       style={styles.inputer}
-      value='password'
+      placeholder='password'
     />
   );
 }
