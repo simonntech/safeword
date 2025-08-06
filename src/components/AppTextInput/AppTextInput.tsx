@@ -3,11 +3,16 @@ import { TextInput } from 'react-native';
 
 import { styles } from './AppTextInputStyles';
 
-export function AppTextInput() {
+interface AppTextInputProps {
+  pass:string
+}
+
+export function AppTextInput(props:AppTextInputProps) {
   return (
     <TextInput
       style={styles.inputer}
       placeholder='password'
+      value={props.pass}
     />
   );
 }
